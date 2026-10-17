@@ -29,8 +29,13 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
             window.center()
             hasBeenShown = true
         }
-        NSApp.activate()
+        // Under macOS 14+ cooperative activation, a plain NSApp.activate() from a status
+        // item click is refused, leaving an already-open window behind the active app.
+        // The deprecated form still activates; orderFrontRegardless() at least raises the
+        // window should a future macOS stop honoring it.
+        NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
+        window.orderFrontRegardless()
     }
 
     func windowDidBecomeKey(_ notification: Notification) {
