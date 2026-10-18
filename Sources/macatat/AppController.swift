@@ -16,7 +16,7 @@ final class AppController: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.mainMenu = MainMenu.make()
-        statusItem = StatusItemController { [weak self] in self?.showSettings() }
+        statusItem = StatusItemController(onOpenSettings: { [weak self] in self?.showSettings() })
         hotKey = GlobalHotKey { [weak self] in self?.hotKeyPressed() }
         settingsWindow = SettingsWindowController(
             rootView: SettingsView(

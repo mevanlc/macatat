@@ -6,8 +6,8 @@ or fields that block paste.
 
 - Press **⌃⌥⌘T** (configurable) to type the clipboard. Press it again to stop.
 - The menu-bar icon turns green while typing.
-- Click the icon to open Settings. Closing the window leaves the app running; use **Quit
-  macatat** in that window to exit.
+- Click the icon to open Settings. Closing the window leaves the app running.
+- Right-click (or Control-click) the icon for a **Settings…** / **Quit** menu.
 
 ## Build and install
 
